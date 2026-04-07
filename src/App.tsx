@@ -112,7 +112,7 @@ export default function App() {
         >
           <div className="font-mono text-[10px] tracking-tighter flex items-center gap-2 pr-4 border-r border-white/10">
             <div className="w-2 h-2 rounded-full bg-electric-indigo animate-pulse" />
-            P_NGCAMU_V2.026
+            PHILA NGCAMU
           </div>
           
           <div className="hidden md:flex items-center gap-6">
@@ -149,14 +149,15 @@ export default function App() {
 
       <main className="relative z-10">
         {/* Section 1: Hero */}
-        <section className="relative min-h-screen flex flex-col justify-center pt-32 px-6 md:px-24 overflow-hidden">
+        <section className="relative min-h-screen flex flex-col justify-center items-start pt-48 px-6 md:px-24 overflow-hidden text-left">
           <GlobalNodeMap />
           
-          <div className="max-w-4xl">
+          <div className="max-w-4xl flex flex-col items-start">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
+              className="flex flex-col items-start"
             >
               <span className="inline-block px-3 py-1 rounded-full bg-electric-indigo/10 border border-electric-indigo/20 text-electric-indigo text-xs font-mono mb-6 uppercase tracking-widest">
                 Software Architect & AI Specialist
