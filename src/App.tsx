@@ -204,10 +204,10 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 1 }}
-            className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+            className="absolute bottom-12 left-6 md:left-48 flex flex-col items-start gap-2"
           >
             <span className="text-[10px] font-mono text-white/30 uppercase tracking-[0.3em]">Scroll to explore</span>
-            <div className="w-[1px] h-12 bg-linear-to-b from-electric-indigo to-transparent" />
+            <div className="w-[1px] h-12 bg-linear-to-b from-electric-indigo to-transparent ml-2" />
           </motion.div>
         </section>
 
