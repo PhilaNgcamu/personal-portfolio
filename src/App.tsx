@@ -413,7 +413,7 @@ export default function App() {
               title="Zipi Driver App"
               description="An 'Uber-like' logistics ecosystem connecting cargo owners and fleet managers, featuring a React Native driver application for real-time shipment tracking and precise geolocation."
               impact="Provided cargo owners and fleet managers with 100% real-time visibility into shipment status and driver whereabouts."
-              stack={["React Native", "Google Maps", "Location Services", "TypeScript"]}
+              stack={["React Native", "Google Maps", "Location Services"]}
               icon={Globe}
             />
             <ProjectCard 
@@ -441,7 +441,7 @@ export default function App() {
             />
             <ProjectCard 
               title="Autonomous Interaction Agent"
-              description="A multi-channel AI assistant ('Sarah') that orchestrates customer journeys across WhatsApp and Email, handling intent detection, automated quote capture, and intelligent human escalation."
+              description="A multi-channel AI ecosystem featuring multi-agents under the 'Sarah' persona that orchestrates customer journeys across WhatsApp and Email, handling intent detection, automated quote capture, and intelligent human escalation."
               impact="Achieved immediate 24/7 response times and automated lead scoring, replacing the workload of 1 full-time equivalent (FTE)."
               stack={["n8n", "Google Gemini AI", "PostgreSQL", "WhatsApp API", "Outlook Integration"]}
               icon={MessageSquare}
