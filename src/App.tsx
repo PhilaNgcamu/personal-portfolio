@@ -499,7 +499,7 @@ export default function App() {
                     </div>
                   </div>
                   <p className="text-sm text-white/60 leading-relaxed">
-                    Recognised for outstanding academic performance and problem-solving capabilities in high-stakes environments.
+                    Achieved an 81% pass in Physical Sciences and received an award for the matric year.
                   </p>
                 </div>
               </motion.div>
