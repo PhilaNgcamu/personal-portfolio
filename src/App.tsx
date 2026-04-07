@@ -678,7 +678,7 @@ export default function App() {
           >
             <div>
               <h2 className="text-4xl font-bold mb-6">Let's build the <span className="text-gradient">future</span> of autonomous systems.</h2>
-              <p className="text-white/50 mb-8 max-w-md">Currently open to collaborations on agentic workflows and RAG systems across all high-demand sectors.</p>
+              <p className="text-white/50 mb-8 max-w-md">Currently open to full stack roles and collaborations on agentic workflows and RAG systems across all high-demand sectors.</p>
               <div className="flex gap-4">
                 <motion.a 
                   whileHover={{ scale: 1.05 }}
