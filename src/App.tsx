@@ -217,7 +217,7 @@ export default function App() {
 
       <main className="relative z-10">
         {/* Section 1: Hero */}
-        <section className="relative min-h-screen flex flex-col justify-center items-start pt-48 px-6 md:pl-48 md:pr-24 overflow-hidden text-left">
+        <section className="relative min-h-screen flex flex-col justify-center items-start pt-48 px-6 md:pl-48 md:pr-24 xl:px-24 max-w-7xl xl:mx-auto overflow-hidden text-left">
           <GlobalNodeMap />
           
           <div className="max-w-4xl flex flex-col items-start">
@@ -261,15 +261,15 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 1 }}
-            className="absolute bottom-12 left-6 md:left-48 hidden md:flex flex-col items-start gap-2"
+            className="absolute bottom-12 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2"
           >
             <span className="text-[10px] font-mono text-white/30 uppercase tracking-[0.3em]">Scroll to explore</span>
-            <div className="w-[1px] h-12 bg-linear-to-b from-electric-indigo to-transparent ml-2" />
+            <div className="w-[1px] h-12 bg-linear-to-b from-electric-indigo to-transparent" />
           </motion.div>
         </section>
 
         {/* Section 2: About */}
-        <section id="about" className="py-32 px-6 md:pl-48 md:pr-24 max-w-7xl">
+        <section id="about" className="py-32 px-6 md:pl-48 md:pr-24 xl:px-24 max-w-7xl xl:mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div
               initial="hidden"
@@ -321,8 +321,8 @@ export default function App() {
         </section>
 
         {/* Section 3: Skills */}
-        <section id="skills" className="py-32 px-6 md:pl-48 md:pr-24 bg-white/2">
-          <div className="max-w-7xl">
+        <section id="skills" className="py-32 px-6 md:pl-48 md:pr-24 xl:px-24 bg-white/2">
+          <div className="max-w-7xl xl:mx-auto">
             <SectionHeading subtitle="The Toolkit">Core Competencies</SectionHeading>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -405,10 +405,10 @@ export default function App() {
         </section>
 
         {/* Section 4: Featured Projects */}
-        <section id="projects" className="py-32 px-6 md:pl-48 md:pr-24 max-w-7xl">
+        <section id="projects" className="py-32 px-6 md:pl-48 md:pr-24 xl:px-24 max-w-7xl xl:mx-auto">
           <SectionHeading subtitle="The Proof">Featured Systems</SectionHeading>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8">
             <ProjectCard 
               title="Zipi Driver App"
               description="An 'Uber-like' logistics ecosystem connecting cargo owners and fleet managers, featuring a React Native driver application for real-time shipment tracking and precise geolocation."
@@ -457,8 +457,8 @@ export default function App() {
         </section>
 
         {/* Section: Certifications & Awards */}
-        <section className="py-32 px-6 md:pl-48 md:pr-24 bg-white/2">
-          <div className="max-w-7xl">
+        <section className="py-32 px-6 md:pl-48 md:pr-24 xl:px-24 bg-white/2">
+          <div className="max-w-7xl xl:mx-auto">
             <SectionHeading subtitle="The Credentials">Certifications & Awards</SectionHeading>
             <div className="grid md:grid-cols-2 gap-8">
               <motion.div 
@@ -516,7 +516,7 @@ export default function App() {
         </section>
 
         {/* Section: Volunteering */}
-        <section className="py-32 px-6 md:pl-48 md:pr-24 max-w-7xl">
+        <section className="py-32 px-6 md:pl-48 md:pr-24 xl:px-24 max-w-7xl xl:mx-auto">
           <SectionHeading subtitle="Social Impact">Volunteering</SectionHeading>
           <motion.div 
             initial="hidden"
@@ -555,8 +555,8 @@ export default function App() {
         </section>
 
         {/* Section 5: Experience */}
-        <section id="experience" className="py-32 px-6 md:pl-48 md:pr-24">
-          <div className="max-w-7xl">
+        <section id="experience" className="py-32 px-6 md:pl-48 md:pr-24 xl:px-24">
+          <div className="max-w-7xl xl:mx-auto">
             <SectionHeading subtitle="The Impact">Professional Journey</SectionHeading>
             
             <div className="space-y-12">
@@ -633,7 +633,7 @@ export default function App() {
         </section>
 
         {/* Section 6: Education */}
-        <section id="education" className="py-32 px-6 md:pl-48 md:pr-24 max-w-7xl">
+        <section id="education" className="py-32 px-6 md:pl-48 md:pr-24 xl:px-24 max-w-7xl xl:mx-auto">
           <SectionHeading subtitle="The Foundation">Education</SectionHeading>
           
           <motion.div 
@@ -668,13 +668,13 @@ export default function App() {
         </section>
 
         {/* Footer */}
-        <footer className="py-24 px-6 md:pl-48 md:pr-24 border-t border-white/5">
+        <footer className="py-24 px-6 md:pl-48 md:pr-24 xl:px-24 border-t border-white/5">
           <motion.div 
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={revealVariants}
-            className="max-w-7xl flex flex-col gap-12"
+            className="max-w-7xl xl:mx-auto flex flex-col gap-12"
           >
             <div>
               <h2 className="text-4xl font-bold mb-6">Let's build the <span className="text-gradient">future</span> of autonomous systems.</h2>
