@@ -411,8 +411,8 @@ export default function App() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <ProjectCard 
               title="Zipi Driver App"
-              description="React Native driver platform for trip workflows, navigation, and location-aware operations with Google Maps integration."
-              impact="Improved route visibility and real-time task execution for transport operations."
+              description="An 'Uber-like' logistics ecosystem connecting cargo owners and fleet managers, featuring a React Native driver application for real-time shipment tracking and precise geolocation."
+              impact="Provided cargo owners and fleet managers with 100% real-time visibility into shipment status and driver whereabouts."
               stack={["React Native", "Google Maps", "Location Services", "TypeScript"]}
               icon={Globe}
             />
