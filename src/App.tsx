@@ -115,7 +115,7 @@ export default function App() {
       <div className="fixed inset-0 bg-radial-at-t from-electric-indigo/5 via-transparent to-transparent pointer-events-none" />
 
       {/* Navigation */}
-      <header className="fixed top-0 w-full z-50 px-6 md:pl-48 md:pr-24 py-4 flex justify-start pointer-events-none">
+      <header className="fixed top-0 w-full z-50 px-6 py-4 flex justify-center pointer-events-none">
         <motion.nav 
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -146,8 +146,8 @@ export default function App() {
           </div>
 
           <div className="flex items-center gap-4 pl-4 border-l border-white/10">
-            <a href="#" className="text-white/50 hover:text-white transition-colors"><Github className="w-4 h-4" /></a>
-            <a href="#" className="text-white/50 hover:text-white transition-colors"><Linkedin className="w-4 h-4" /></a>
+            <a href="https://github.com/PhilaNgcamu" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors"><Github className="w-4 h-4" /></a>
+            <a href="https://www.linkedin.com/in/philasande-ngcamu-282992207/" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors"><Linkedin className="w-4 h-4" /></a>
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -204,7 +204,7 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 1 }}
-            className="absolute bottom-12 left-6 md:left-48 flex flex-col items-start gap-2"
+            className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
           >
             <span className="text-[10px] font-mono text-white/30 uppercase tracking-[0.3em]">Scroll to explore</span>
             <div className="w-[1px] h-12 bg-linear-to-b from-electric-indigo to-transparent" />
@@ -213,7 +213,7 @@ export default function App() {
 
         {/* Section 2: About */}
         <section id="about" className="py-32 px-6 md:pl-48 md:pr-24 max-w-7xl">
-          <div className="flex flex-col gap-16">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -239,7 +239,7 @@ export default function App() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={revealVariants}
-              className="relative max-w-2xl"
+              className="relative"
             >
               <div className="aspect-square rounded-3xl glass overflow-hidden relative group">
                 <div className="absolute inset-0 bg-linear-to-br from-electric-indigo/20 to-cyber-blue/20 group-hover:opacity-0 transition-opacity duration-700" />
@@ -337,9 +337,9 @@ export default function App() {
             />
             <ProjectCard 
               title="Zipi Newsletter Frontend"
-              description="Responsive web experience for Zipi’s campaign platform, focused on high-conversion content delivery and brand consistency."
+              description="High-performance Next.js web experience for Zipi’s campaign platform, focused on high-conversion content delivery and brand consistency."
               impact="Streamlined campaign delivery and improved mobile engagement for Zipi's newsletter."
-              stack={["React", "Tailwind CSS", "Responsive Design", "Vite"]}
+              stack={["Next.js", "Tailwind CSS", "Responsive Design", "TypeScript"]}
               icon={Layers}
               link="newsletter.zipi.co.za"
             />
@@ -581,8 +581,8 @@ export default function App() {
                   <Mail className="w-4 h-4" /> Contact Me
                 </motion.a>
                 <div className="flex gap-2">
-                  <a href="#" className="w-12 h-12 glass rounded-xl flex items-center justify-center hover:bg-white/5 transition-all"><Github className="w-5 h-5" /></a>
-                  <a href="#" className="w-12 h-12 glass rounded-xl flex items-center justify-center hover:bg-white/5 transition-all"><Linkedin className="w-5 h-5" /></a>
+                  <a href="https://github.com/PhilaNgcamu" target="_blank" rel="noopener noreferrer" className="w-12 h-12 glass rounded-xl flex items-center justify-center hover:bg-white/5 transition-all"><Github className="w-5 h-5" /></a>
+                  <a href="https://www.linkedin.com/in/philasande-ngcamu-282992207/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 glass rounded-xl flex items-center justify-center hover:bg-white/5 transition-all"><Linkedin className="w-5 h-5" /></a>
                 </div>
               </div>
             </div>
