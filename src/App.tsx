@@ -441,16 +441,16 @@ export default function App() {
             />
             <ProjectCard 
               title="Autonomous Interaction Agent"
-              description="A multi-channel WhatsApp bot using Vertex AI that allows clients to track orders, request quotes, and upload documents via natural language."
-              impact="Reduced manual customer service inquiries by 40%."
-              stack={["Python", "Supabase", "WhatsApp API", "n8n"]}
+              description="A multi-channel AI assistant ('Sarah') that orchestrates customer journeys across WhatsApp and Email, handling intent detection, automated quote capture, and intelligent human escalation."
+              impact="Achieved immediate 24/7 response times and automated lead scoring, replacing the workload of 1 full-time equivalent (FTE)."
+              stack={["n8n", "Google Gemini AI", "PostgreSQL", "WhatsApp API", "Outlook Integration"]}
               icon={MessageSquare}
             />
             <ProjectCard 
               title="Enterprise RAG Assistant"
-              description="A private LLM interface trained on internal SOPs and compliance documents to assist staff with complex operational queries."
-              impact="Automated 1,000+ internal compliance checks monthly."
-              stack={["Vertex AI", "Vector Embeddings", "n8n"]}
+              description="A secure internal knowledge tool with tiered access control, allowing staff to query company SOPs, sales scripts, and administrative commands via a conversational WhatsApp interface."
+              impact="Accelerated staff onboarding and provided global 24/7 access to critical business intelligence with strict data security."
+              stack={["n8n", "Google Gemini AI", "PGVector", "WhatsApp API", "PostgreSQL"]}
               icon={Database}
             />
           </div>
