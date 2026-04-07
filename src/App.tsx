@@ -45,19 +45,31 @@ const SectionHeading = ({ children, subtitle }: { children: React.ReactNode, sub
   </motion.div>
 );
 
-const ProjectCard = ({ title, description, impact, stack, icon: Icon }: any) => (
+const ProjectCard = ({ title, description, impact, stack, icon: Icon, link }: any) => (
   <motion.div 
     initial="hidden"
     whileInView="visible"
     viewport={{ once: true }}
     variants={revealVariants}
-    className="glass p-6 rounded-2xl group hover:border-electric-indigo/50 transition-all duration-500"
+    className="glass p-6 rounded-2xl group hover:border-electric-indigo/50 transition-all duration-500 flex flex-col h-full"
   >
     <div className="w-12 h-12 rounded-xl bg-electric-indigo/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
       <Icon className="w-6 h-6 text-electric-indigo" />
     </div>
-    <h3 className="text-xl font-bold mb-3 group-hover:text-electric-indigo transition-colors">{title}</h3>
-    <p className="text-white/70 mb-4 leading-relaxed">{description}</p>
+    <h3 className="text-xl font-bold mb-3 group-hover:text-electric-indigo transition-colors flex items-center justify-between">
+      {title}
+      {link && (
+        <a 
+          href={link.startsWith('http') ? link : `https://${link}`} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-white/30 hover:text-electric-indigo transition-colors"
+        >
+          <ExternalLink className="w-4 h-4" />
+        </a>
+      )}
+    </h3>
+    <p className="text-white/70 mb-4 leading-relaxed flex-grow">{description}</p>
     <div className="bg-cyber-blue/10 border border-cyber-blue/20 rounded-lg p-3 mb-6">
       <p className="text-cyber-blue text-sm font-medium flex items-center gap-2">
         <Zap className="w-4 h-4" />
@@ -200,7 +212,7 @@ export default function App() {
         </section>
 
         {/* Section 2: About */}
-        <section id="about" className="py-32 px-6 md:px-24 max-w-7xl mx-auto">
+        <section id="about" className="py-32 px-6 md:px-24 max-w-7xl">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div
               initial="hidden"
@@ -253,7 +265,7 @@ export default function App() {
 
         {/* Section 3: Skills */}
         <section id="skills" className="py-32 px-6 md:px-24 bg-white/2">
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-7xl">
             <SectionHeading subtitle="The Toolkit">Core Competencies</SectionHeading>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -312,7 +324,7 @@ export default function App() {
         </section>
 
         {/* Section 4: Featured Projects */}
-        <section id="projects" className="py-32 px-6 md:px-24 max-w-7xl mx-auto">
+        <section id="projects" className="py-32 px-6 md:px-24 max-w-7xl">
           <SectionHeading subtitle="The Proof">Featured Systems</SectionHeading>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -329,6 +341,7 @@ export default function App() {
               impact="Streamlined campaign delivery and improved mobile engagement for Zipi's newsletter."
               stack={["React", "Tailwind CSS", "Responsive Design", "Vite"]}
               icon={Layers}
+              link="newsletter.zipi.co.za"
             />
             <ProjectCard 
               title="Secure Payment Orchestration"
@@ -356,7 +369,7 @@ export default function App() {
 
         {/* Section: Certifications & Awards */}
         <section className="py-32 px-6 md:px-24 bg-white/2">
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-7xl">
             <SectionHeading subtitle="The Credentials">Certifications & Awards</SectionHeading>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-4">
@@ -402,7 +415,7 @@ export default function App() {
         </section>
 
         {/* Section: Volunteering */}
-        <section className="py-32 px-6 md:px-24 max-w-7xl mx-auto">
+        <section className="py-32 px-6 md:px-24 max-w-7xl">
           <SectionHeading subtitle="Social Impact">Volunteering</SectionHeading>
           <motion.div 
             initial="hidden"
@@ -413,7 +426,17 @@ export default function App() {
           >
             <div className="flex flex-col md:flex-row justify-between items-start mb-6 gap-4">
               <div>
-                <h3 className="text-2xl font-bold">Full Stack Developer</h3>
+                <h3 className="text-2xl font-bold flex items-center gap-3">
+                  Full Stack Developer
+                  <a 
+                    href="https://shipwreckers.co.za" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-white/30 hover:text-electric-indigo transition-colors"
+                  >
+                    <ExternalLink className="w-5 h-5" />
+                  </a>
+                </h3>
                 <p className="text-electric-indigo font-medium">Shipwreckers (Social Services)</p>
               </div>
               <span className="font-mono text-sm text-white/40 bg-white/5 px-3 py-1 rounded-full">Jun 2024 — Present</span>
@@ -432,7 +455,7 @@ export default function App() {
 
         {/* Section 5: Experience */}
         <section id="experience" className="py-32 px-6 md:px-24">
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-7xl">
             <SectionHeading subtitle="The Impact">Professional Journey</SectionHeading>
             
             <div className="space-y-12">
@@ -509,7 +532,7 @@ export default function App() {
         </section>
 
         {/* Section 6: Education */}
-        <section id="education" className="py-32 px-6 md:px-24 max-w-7xl mx-auto">
+        <section id="education" className="py-32 px-6 md:px-24 max-w-7xl">
           <SectionHeading subtitle="The Foundation">Education</SectionHeading>
           
           <motion.div 
@@ -545,7 +568,7 @@ export default function App() {
 
         {/* Footer */}
         <footer className="py-24 px-6 md:px-24 border-t border-white/5">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div className="max-w-7xl grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl font-bold mb-6">Let's build the <span className="text-gradient">future</span> of autonomous systems.</h2>
               <p className="text-white/50 mb-8 max-w-md">Currently open to collaborations on agentic workflows and RAG systems across all high-demand sectors.</p>
