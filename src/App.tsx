@@ -261,7 +261,7 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 1 }}
-            className="absolute bottom-12 left-6 md:left-48 flex flex-col items-start gap-2"
+            className="absolute bottom-12 left-6 md:left-48 hidden md:flex flex-col items-start gap-2"
           >
             <span className="text-[10px] font-mono text-white/30 uppercase tracking-[0.3em]">Scroll to explore</span>
             <div className="w-[1px] h-12 bg-linear-to-b from-electric-indigo to-transparent ml-2" />
@@ -326,7 +326,13 @@ export default function App() {
             <SectionHeading subtitle="The Toolkit">Core Competencies</SectionHeading>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="space-y-4">
+              <motion.div 
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={revealVariants}
+                className="space-y-4"
+              >
                 <h4 className="font-mono text-xs text-electric-indigo uppercase tracking-widest mb-6 flex items-center gap-2">
                   <Cpu className="w-4 h-4" /> AI & Automation
                 </h4>
@@ -337,9 +343,15 @@ export default function App() {
                   <SkillBadge name="Agentic Workflows" icon={Layers} />
                   <SkillBadge name="LangChain" icon={Code2} />
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="space-y-4">
+              <motion.div 
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={revealVariants}
+                className="space-y-4"
+              >
                 <h4 className="font-mono text-xs text-cyber-blue uppercase tracking-widest mb-6 flex items-center gap-2">
                   <Database className="w-4 h-4" /> Backend & Data
                 </h4>
@@ -350,9 +362,15 @@ export default function App() {
                   <SkillBadge name="Supabase" icon={Layers} />
                   <SkillBadge name="SQL Optimization" icon={Zap} />
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="space-y-4">
+              <motion.div 
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={revealVariants}
+                className="space-y-4"
+              >
                 <h4 className="font-mono text-xs text-electric-indigo uppercase tracking-widest mb-6 flex items-center gap-2">
                   <Globe className="w-4 h-4" /> Integration
                 </h4>
@@ -363,9 +381,15 @@ export default function App() {
                   <SkillBadge name="Jira Automation" icon={Workflow} />
                   <SkillBadge name="Microsoft Azure" icon={Globe} />
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="space-y-4">
+              <motion.div 
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={revealVariants}
+                className="space-y-4"
+              >
                 <h4 className="font-mono text-xs text-cyber-blue uppercase tracking-widest mb-6 flex items-center gap-2">
                   <Layers className="w-4 h-4" /> Cloud & DevOps
                 </h4>
@@ -375,7 +399,7 @@ export default function App() {
                   <SkillBadge name="CI/CD Pipelines" icon={Workflow} />
                   <SkillBadge name="Microservices" icon={Cpu} />
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -429,7 +453,13 @@ export default function App() {
           <div className="max-w-7xl">
             <SectionHeading subtitle="The Credentials">Certifications & Awards</SectionHeading>
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-4">
+              <motion.div 
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={revealVariants}
+                className="space-y-4"
+              >
                 <h4 className="font-mono text-xs text-electric-indigo uppercase tracking-widest mb-6">Certifications</h4>
                 <div className="space-y-3">
                   {[
@@ -449,8 +479,14 @@ export default function App() {
                     </div>
                   ))}
                 </div>
-              </div>
-              <div className="space-y-4">
+              </motion.div>
+              <motion.div 
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={revealVariants}
+                className="space-y-4"
+              >
                 <h4 className="font-mono text-xs text-cyber-blue uppercase tracking-widest mb-6">Honours & Awards</h4>
                 <div className="glass p-6 rounded-2xl border-cyber-blue/30">
                   <div className="flex items-center gap-4 mb-4">
@@ -466,7 +502,7 @@ export default function App() {
                     Recognised for outstanding academic performance and problem-solving capabilities in high-stakes environments.
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -625,7 +661,13 @@ export default function App() {
 
         {/* Footer */}
         <footer className="py-24 px-6 md:pl-48 md:pr-24 border-t border-white/5">
-          <div className="max-w-7xl flex flex-col gap-12">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={revealVariants}
+            className="max-w-7xl flex flex-col gap-12"
+          >
             <div>
               <h2 className="text-4xl font-bold mb-6">Let's build the <span className="text-gradient">future</span> of autonomous systems.</h2>
               <p className="text-white/50 mb-8 max-w-md">Currently open to collaborations on agentic workflows and RAG systems across all high-demand sectors.</p>
@@ -648,7 +690,7 @@ export default function App() {
               <p>NEURAL SYSTEMS ARCHITECTURES</p>
               <p>BUILT IN JOHANNESBURG, SA</p>
             </div>
-          </div>
+          </motion.div>
         </footer>
       </main>
     </div>
