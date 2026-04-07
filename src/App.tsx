@@ -38,8 +38,8 @@ const SectionHeading = ({ children, subtitle }: { children: React.ReactNode, sub
     className="mb-12"
   >
     <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 flex items-center gap-3">
-      <span className="w-8 h-[2px] bg-electric-indigo"></span>
       {children}
+      <span className="w-8 h-[2px] bg-electric-indigo"></span>
     </h2>
     {subtitle && <p className="text-white/50 font-mono text-sm uppercase tracking-widest">{subtitle}</p>}
   </motion.div>
@@ -115,7 +115,7 @@ export default function App() {
       <div className="fixed inset-0 bg-radial-at-t from-electric-indigo/5 via-transparent to-transparent pointer-events-none" />
 
       {/* Navigation */}
-      <header className="fixed top-0 w-full z-50 px-6 py-4 flex justify-center pointer-events-none">
+      <header className="fixed top-0 w-full z-50 px-6 md:pl-48 md:pr-24 py-4 flex justify-start pointer-events-none">
         <motion.nav 
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -161,7 +161,7 @@ export default function App() {
 
       <main className="relative z-10">
         {/* Section 1: Hero */}
-        <section className="relative min-h-screen flex flex-col justify-center items-start pt-48 px-6 md:px-24 overflow-hidden text-left">
+        <section className="relative min-h-screen flex flex-col justify-center items-start pt-48 px-6 md:pl-48 md:pr-24 overflow-hidden text-left">
           <GlobalNodeMap />
           
           <div className="max-w-4xl flex flex-col items-start">
@@ -204,7 +204,7 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 1 }}
-            className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+            className="absolute bottom-12 left-6 md:left-48 flex flex-col items-start gap-2"
           >
             <span className="text-[10px] font-mono text-white/30 uppercase tracking-[0.3em]">Scroll to explore</span>
             <div className="w-[1px] h-12 bg-linear-to-b from-electric-indigo to-transparent" />
@@ -212,8 +212,8 @@ export default function App() {
         </section>
 
         {/* Section 2: About */}
-        <section id="about" className="py-32 px-6 md:px-24 max-w-7xl">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+        <section id="about" className="py-32 px-6 md:pl-48 md:pr-24 max-w-7xl">
+          <div className="flex flex-col gap-16">
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -239,7 +239,7 @@ export default function App() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={revealVariants}
-              className="relative"
+              className="relative max-w-2xl"
             >
               <div className="aspect-square rounded-3xl glass overflow-hidden relative group">
                 <div className="absolute inset-0 bg-linear-to-br from-electric-indigo/20 to-cyber-blue/20 group-hover:opacity-0 transition-opacity duration-700" />
@@ -264,7 +264,7 @@ export default function App() {
         </section>
 
         {/* Section 3: Skills */}
-        <section id="skills" className="py-32 px-6 md:px-24 bg-white/2">
+        <section id="skills" className="py-32 px-6 md:pl-48 md:pr-24 bg-white/2">
           <div className="max-w-7xl">
             <SectionHeading subtitle="The Toolkit">Core Competencies</SectionHeading>
             
@@ -324,7 +324,7 @@ export default function App() {
         </section>
 
         {/* Section 4: Featured Projects */}
-        <section id="projects" className="py-32 px-6 md:px-24 max-w-7xl">
+        <section id="projects" className="py-32 px-6 md:pl-48 md:pr-24 max-w-7xl">
           <SectionHeading subtitle="The Proof">Featured Systems</SectionHeading>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -368,7 +368,7 @@ export default function App() {
         </section>
 
         {/* Section: Certifications & Awards */}
-        <section className="py-32 px-6 md:px-24 bg-white/2">
+        <section className="py-32 px-6 md:pl-48 md:pr-24 bg-white/2">
           <div className="max-w-7xl">
             <SectionHeading subtitle="The Credentials">Certifications & Awards</SectionHeading>
             <div className="grid md:grid-cols-2 gap-8">
@@ -415,7 +415,7 @@ export default function App() {
         </section>
 
         {/* Section: Volunteering */}
-        <section className="py-32 px-6 md:px-24 max-w-7xl">
+        <section className="py-32 px-6 md:pl-48 md:pr-24 max-w-7xl">
           <SectionHeading subtitle="Social Impact">Volunteering</SectionHeading>
           <motion.div 
             initial="hidden"
@@ -424,7 +424,7 @@ export default function App() {
             variants={revealVariants}
             className="glass p-8 rounded-3xl border-electric-indigo/20"
           >
-            <div className="flex flex-col md:flex-row justify-between items-start mb-6 gap-4">
+            <div className="flex flex-col items-start mb-6 gap-4">
               <div>
                 <h3 className="text-2xl font-bold flex items-center gap-3">
                   Full Stack Developer
@@ -454,7 +454,7 @@ export default function App() {
         </section>
 
         {/* Section 5: Experience */}
-        <section id="experience" className="py-32 px-6 md:px-24">
+        <section id="experience" className="py-32 px-6 md:pl-48 md:pr-24">
           <div className="max-w-7xl">
             <SectionHeading subtitle="The Impact">Professional Journey</SectionHeading>
             
@@ -510,7 +510,7 @@ export default function App() {
                   className="relative pl-8 border-l border-white/10"
                 >
                   <div className="absolute left-[-5px] top-0 w-2 h-2 rounded-full bg-electric-indigo" />
-                  <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-2">
+                  <div className="flex flex-col items-start mb-4 gap-2">
                     <div>
                       <h3 className="text-2xl font-bold">{exp.role}</h3>
                       <p className="text-electric-indigo font-medium">{exp.company}</p>
@@ -532,7 +532,7 @@ export default function App() {
         </section>
 
         {/* Section 6: Education */}
-        <section id="education" className="py-32 px-6 md:px-24 max-w-7xl">
+        <section id="education" className="py-32 px-6 md:pl-48 md:pr-24 max-w-7xl">
           <SectionHeading subtitle="The Foundation">Education</SectionHeading>
           
           <motion.div 
@@ -542,7 +542,7 @@ export default function App() {
             variants={revealVariants}
             className="glass p-8 rounded-3xl max-w-3xl"
           >
-            <div className="flex flex-col md:flex-row justify-between gap-6">
+            <div className="flex flex-col items-start gap-6">
               <div>
                 <h3 className="text-2xl font-bold mb-2">BSc Mathematics and Computer Science</h3>
                 <p className="text-cyber-blue font-medium mb-4">University of South Africa (UNISA)</p>
@@ -558,7 +558,7 @@ export default function App() {
                   <span className="text-sm font-medium">Unisa Developer Society Member</span>
                 </div>
               </div>
-              <div className="text-right">
+              <div className="text-left">
                 <span className="font-mono text-sm text-white/40 block mb-1">Jan 2025 — Dec 2027</span>
                 <span className="text-xs text-white/30 italic">Optimising for grit and self-discipline</span>
               </div>
@@ -567,8 +567,8 @@ export default function App() {
         </section>
 
         {/* Footer */}
-        <footer className="py-24 px-6 md:px-24 border-t border-white/5">
-          <div className="max-w-7xl grid md:grid-cols-2 gap-12 items-center">
+        <footer className="py-24 px-6 md:pl-48 md:pr-24 border-t border-white/5">
+          <div className="max-w-7xl flex flex-col gap-12">
             <div>
               <h2 className="text-4xl font-bold mb-6">Let's build the <span className="text-gradient">future</span> of autonomous systems.</h2>
               <p className="text-white/50 mb-8 max-w-md">Currently open to collaborations on agentic workflows and RAG systems across all high-demand sectors.</p>
@@ -586,7 +586,7 @@ export default function App() {
                 </div>
               </div>
             </div>
-            <div className="text-right font-mono text-[10px] text-white/20 uppercase tracking-[0.4em] space-y-2">
+            <div className="text-left font-mono text-[10px] text-white/20 uppercase tracking-[0.4em] space-y-2">
               <p>© 2026 PHILASANDE NGCAMU</p>
               <p>NEURAL SYSTEMS ARCHITECTURES</p>
               <p>BUILT IN JOHANNESBURG, SA</p>
