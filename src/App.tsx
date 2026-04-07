@@ -280,13 +280,13 @@ export default function App() {
               <SectionHeading subtitle="The Narrative">About Me</SectionHeading>
               <div className="space-y-6 text-lg text-white/70 leading-relaxed">
                 <p>
-                  I am a Software Developer and AI Automation Specialist currently optimizing complex enterprise operations at <span className="text-white font-medium">Land and Sea Shipping</span>.
+                  I am a Software Developer and AI Automation Specialist currently optimising complex enterprise operations at <span className="text-white font-medium">Land and Sea Shipping</span>.
                 </p>
                 <p>
                   While completing my BSc in Mathematics and Computer Science at <span className="text-white font-medium">UNISA</span>, I spend my days (and nights) engineering autonomous workflows that replace manual bottlenecks with intelligent agents.
                 </p>
                 <p>
-                  I don't just write code; I design systems that think, communicate, and scale. My focus is on creating <span className="text-electric-indigo font-medium italic">resilient orchestration</span> that delivers measurable ROI in high-stakes environments like FinTech, Logistics, and E-commerce.
+                  I don't just write code; I design systems that think, communicate, and scale. My focus is on creating <span className="text-electric-indigo font-medium italic">resilient orchestration</span> that delivers measurable ROI in high-stakes environments like enterprise operations and complex systems.
                 </p>
               </div>
             </motion.div>
@@ -360,7 +360,7 @@ export default function App() {
                   <SkillBadge name="TypeScript" icon={Code2} />
                   <SkillBadge name="PostgreSQL" icon={Database} />
                   <SkillBadge name="Supabase" icon={Layers} />
-                  <SkillBadge name="SQL Optimization" icon={Zap} />
+                  <SkillBadge name="SQL Optimisation" icon={Zap} />
                 </div>
               </motion.div>
 
