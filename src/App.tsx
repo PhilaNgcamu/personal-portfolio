@@ -434,7 +434,7 @@ export default function App() {
             <ProjectCard 
               title="Land and Sea Shipping Website"
               description="Redesigned and optimised the core enterprise web presence, focusing on performance, modern aesthetics, and seamless user journeys."
-              impact="Enhanced brand authority and significantly improved page load speeds."
+              impact="Enhanced brand authority, significantly improved page load speeds, and integrated a WhatsApp RAG chatbot for real-time support."
               stack={["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"]}
               icon={Ship}
               link="landsea.co.za"
