@@ -15,8 +15,11 @@ import {
   Terminal,
   Code2,
   Workflow,
-  Zap
+  Zap,
+  Menu,
+  X
 } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import GlobalNodeMap from './components/GlobalNodeMap';
 import { cn } from './lib/utils';
 
@@ -58,16 +61,6 @@ const ProjectCard = ({ title, description, impact, stack, icon: Icon, link }: an
     </div>
     <h3 className="text-xl font-bold mb-3 group-hover:text-electric-indigo transition-colors flex items-center justify-between">
       {title}
-      {link && (
-        <a 
-          href={link.startsWith('http') ? link : `https://${link}`} 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="text-white/30 hover:text-electric-indigo transition-colors"
-        >
-          <ExternalLink className="w-4 h-4" />
-        </a>
-      )}
     </h3>
     <p className="text-white/70 mb-4 leading-relaxed flex-grow">{description}</p>
     <div className="bg-cyber-blue/10 border border-cyber-blue/20 rounded-lg p-3 mb-6">
@@ -76,13 +69,26 @@ const ProjectCard = ({ title, description, impact, stack, icon: Icon, link }: an
         Impact: {impact}
       </p>
     </div>
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap gap-2 mb-8">
       {stack.map((tech: string) => (
         <span key={tech} className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-white/50">
           {tech}
         </span>
       ))}
     </div>
+    
+    {link && (
+      <motion.a 
+        href={link.startsWith('http') ? link : `https://${link}`} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+        className="mt-auto w-full py-3 bg-white/5 border border-white/10 rounded-xl font-mono text-[10px] uppercase tracking-widest font-bold flex items-center justify-center gap-2 hover:bg-electric-indigo hover:border-electric-indigo transition-all duration-300"
+      >
+        Launch System <ExternalLink className="w-3 h-3" />
+      </motion.a>
+    )}
   </motion.div>
 );
 
@@ -97,7 +103,23 @@ const SkillBadge = ({ name, icon: Icon }: { name: string, icon: any }) => (
 );
 
 export default function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { scrollYProgress } = useScroll();
+
+  // Close menu on scroll
+  useEffect(() => {
+    const handleScroll = () => setIsMenuOpen(false);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    ["About", "#about"],
+    ["Skills", "#skills"],
+    ["Projects", "#projects"],
+    ["Experience", "#experience"],
+    ["Education", "#education"]
+  ];
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
@@ -120,7 +142,7 @@ export default function App() {
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: "circOut" }}
-          className="glass px-6 py-3 rounded-2xl border border-white/10 flex items-center gap-8 pointer-events-auto shadow-2xl backdrop-blur-xl"
+          className="glass px-4 md:px-6 py-3 rounded-2xl border border-white/10 flex items-center gap-4 md:gap-8 pointer-events-auto shadow-2xl backdrop-blur-xl relative"
         >
           <div className="font-mono text-[10px] tracking-tighter flex items-center gap-2 pr-4 border-r border-white/10">
             <div className="w-2 h-2 rounded-full bg-electric-indigo animate-pulse" />
@@ -128,13 +150,7 @@ export default function App() {
           </div>
           
           <div className="hidden md:flex items-center gap-6">
-            {[
-              ["About", "#about"],
-              ["Skills", "#skills"],
-              ["Projects", "#projects"],
-              ["Experience", "#experience"],
-              ["Education", "#education"]
-            ].map(([label, href]) => (
+            {navLinks.map(([label, href]) => (
               <a 
                 key={label} 
                 href={href} 
@@ -145,17 +161,57 @@ export default function App() {
             ))}
           </div>
 
-          <div className="flex items-center gap-4 pl-4 border-l border-white/10">
-            <a href="https://github.com/PhilaNgcamu" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors"><Github className="w-4 h-4" /></a>
-            <a href="https://www.linkedin.com/in/philasande-ngcamu-282992207/" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors"><Linkedin className="w-4 h-4" /></a>
+          <div className="flex items-center gap-4 pl-0 md:pl-4 border-l-0 md:border-l border-white/10">
+            <div className="hidden sm:flex items-center gap-4">
+              <a href="https://github.com/PhilaNgcamu" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors"><Github className="w-4 h-4" /></a>
+              <a href="https://www.linkedin.com/in/philasande-ngcamu-282992207/" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors"><Linkedin className="w-4 h-4" /></a>
+            </div>
+            
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-electric-indigo text-white text-[10px] font-mono uppercase tracking-widest px-4 py-2 rounded-lg font-bold hover:bg-electric-indigo/90 transition-all ml-2"
+              className="hidden sm:block bg-electric-indigo text-white text-[10px] font-mono uppercase tracking-widest px-4 py-2 rounded-lg font-bold hover:bg-electric-indigo/90 transition-all ml-2"
             >
               CV
             </motion.button>
+
+            {/* Hamburger Toggle */}
+            <button 
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden p-2 text-white/50 hover:text-white transition-colors"
+            >
+              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
           </div>
+
+          {/* Mobile Menu Overlay */}
+          {isMenuOpen && (
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              className="absolute top-full left-0 right-0 mt-2 bg-obsidian/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 flex flex-col gap-4 md:hidden shadow-2xl"
+            >
+              {navLinks.map(([label, href]) => (
+                <a 
+                  key={label} 
+                  href={href} 
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-xs font-mono uppercase tracking-widest text-white/70 hover:text-electric-indigo transition-colors py-2 border-b border-white/5 last:border-0"
+                >
+                  {label}
+                </a>
+              ))}
+              <div className="flex items-center justify-between pt-4 mt-2 border-t border-white/10">
+                <div className="flex gap-4">
+                  <a href="https://github.com/PhilaNgcamu" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors"><Github className="w-5 h-5" /></a>
+                  <a href="https://www.linkedin.com/in/philasande-ngcamu-282992207/" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors"><Linkedin className="w-5 h-5" /></a>
+                </div>
+                <button className="bg-electric-indigo text-white text-[10px] font-mono uppercase tracking-widest px-4 py-2 rounded-lg font-bold">
+                  CV
+                </button>
+              </div>
+            </motion.div>
+          )}
         </motion.nav>
       </header>
 
@@ -182,13 +238,14 @@ export default function App() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <motion.button 
+                <motion.a 
+                  href="#projects"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="px-8 py-4 bg-electric-indigo rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-electric-indigo/90 transition-all shadow-lg shadow-electric-indigo/20"
                 >
                   View Systems <ChevronRight className="w-4 h-4" />
-                </motion.button>
+                </motion.a>
                 <motion.button 
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
