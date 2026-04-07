@@ -432,6 +432,14 @@ export default function App() {
               icon={Zap}
             />
             <ProjectCard 
+              title="Land and Sea Shipping Website"
+              description="Redesigned and optimised the core enterprise web presence, focusing on performance, modern aesthetics, and seamless user journeys."
+              impact="Enhanced brand authority and significantly improved page load speeds."
+              stack={["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"]}
+              icon={Ship}
+              link="landsea.co.za"
+            />
+            <ProjectCard 
               title="Autonomous Interaction Agent"
               description="A multi-channel WhatsApp bot using Vertex AI that allows clients to track orders, request quotes, and upload documents via natural language."
               impact="Reduced manual customer service inquiries by 40%."
