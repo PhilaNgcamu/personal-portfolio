@@ -674,7 +674,7 @@ export default function App() {
               <div className="flex gap-4">
                 <motion.a 
                   whileHover={{ scale: 1.05 }}
-                  href="mailto:philangcamu07@gmail.com"
+                  href="mailto:philasandengcamu.pn@gmail.com"
                   className="px-6 py-3 bg-white text-obsidian rounded-xl font-bold flex items-center gap-2"
                 >
                   <Mail className="w-4 h-4" /> Contact Me
