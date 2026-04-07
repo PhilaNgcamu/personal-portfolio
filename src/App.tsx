@@ -441,9 +441,9 @@ export default function App() {
             />
             <ProjectCard 
               title="Autonomous Interaction Agent"
-              description="A multi-channel AI ecosystem featuring multi-agents under the 'Sarah' persona that orchestrates customer journeys across WhatsApp and Email, handling intent detection, automated quote capture, and intelligent human escalation."
-              impact="Achieved immediate 24/7 response times and automated lead scoring, replacing the workload of 1 full-time equivalent (FTE)."
-              stack={["n8n", "Google Gemini AI", "PostgreSQL", "WhatsApp API", "Outlook Integration"]}
+              description="A multi-channel AI ecosystem featuring multi-agents under the 'Sarah' persona that orchestrates proactive CRM-integrated outbound and inbound workflows across WhatsApp and Email, driving high-conversion sales cycles."
+              impact="Achieved immediate 24/7 response times, automated lead scoring, and proactive sales conversion, replacing 1.5+ FTE workload."
+              stack={["n8n", "Google Gemini AI", "CRM Integration", "WhatsApp API", "Outlook Integration"]}
               icon={MessageSquare}
             />
             <ProjectCard 
