@@ -167,13 +167,15 @@ export default function App() {
               <a href="https://www.linkedin.com/in/philasande-ngcamu-282992207/" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors"><Linkedin className="w-4 h-4" /></a>
             </div>
             
-            <motion.button 
+            <motion.a 
+              href="/Philasande_Ngcamu_CV.pdf"
+              download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="hidden sm:block bg-electric-indigo text-white text-[10px] font-mono uppercase tracking-widest px-4 py-2 rounded-lg font-bold hover:bg-electric-indigo/90 transition-all ml-2"
+              className="hidden sm:flex bg-electric-indigo text-white text-[10px] font-mono uppercase tracking-widest px-4 py-2 rounded-lg font-bold hover:bg-electric-indigo/90 transition-all ml-2 items-center justify-center"
             >
               CV
-            </motion.button>
+            </motion.a>
 
             {/* Hamburger Toggle */}
             <button 
@@ -206,9 +208,13 @@ export default function App() {
                   <a href="https://github.com/PhilaNgcamu" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors"><Github className="w-5 h-5" /></a>
                   <a href="https://www.linkedin.com/in/philasande-ngcamu-282992207/" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors"><Linkedin className="w-5 h-5" /></a>
                 </div>
-                <button className="bg-electric-indigo text-white text-[10px] font-mono uppercase tracking-widest px-4 py-2 rounded-lg font-bold">
+                <a 
+                  href="/Philasande_Ngcamu_CV.pdf"
+                  download
+                  className="bg-electric-indigo text-white text-[10px] font-mono uppercase tracking-widest px-4 py-2 rounded-lg font-bold flex items-center justify-center"
+                >
                   CV
-                </button>
+                </a>
               </div>
             </motion.div>
           )}
@@ -246,13 +252,15 @@ export default function App() {
                 >
                   View Systems <ChevronRight className="w-4 h-4" />
                 </motion.a>
-                <motion.button 
+                <motion.a 
+                  href="/Philasande_Ngcamu_CV.pdf"
+                  download
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="px-8 py-4 border border-white/10 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-white/5 transition-all"
+                  className="px-8 py-4 border border-white/10 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-white/5 transition-all text-white"
                 >
                   Download CV <FileText className="w-4 h-4" />
-                </motion.button>
+                </motion.a>
               </div>
             </motion.div>
           </div>
@@ -471,15 +479,11 @@ export default function App() {
                 <h4 className="font-mono text-xs text-electric-indigo uppercase tracking-widest mb-6">Certifications</h4>
                 <div className="space-y-3">
                   {[
-                    "Infrastructure and Application Modernisation with Google Cloud",
-                    "Exploring Data Transformation with Google Cloud",
-                    "Digital Transformation with Google Cloud",
-                    "Oracle Cloud Infrastructure 2025 Certified Foundations Associate",
-                    "Google Cloud Fundamentals: Core Infrastructure",
-                    "Introduction to Generative AI (Google Cloud)",
+                    "Google Cloud: Infrastructure and Application Modernisation",
+                    "Google Cloud: Exploring Data Transformation",
+                    "Google: Introduction to Generative AI",
                     "Accenture Digital Skills: User Experience",
-                    "National Certificate in IT: Systems Development (MICT SETA)",
-                    "UMUZI Certification Of Completion (React & React Native)"
+                    "National Certificate in IT: Systems Development (MICT SETA/Umuzi)"
                   ].map((cert) => (
                     <div key={cert} className="glass p-4 rounded-xl flex items-center gap-3 border border-white/5">
                       <div className="w-2 h-2 rounded-full bg-cyber-blue" />
@@ -562,13 +566,13 @@ export default function App() {
             <div className="space-y-12">
               {[
                 {
-                  role: "Software Architect",
+                  role: "Software Architect & AI Engineer",
                   company: "Land and Sea Shipping",
                   period: "Jan 2026 — Present",
                   details: [
-                    "Leading technical architecture and system design for enterprise-scale logistics platforms.",
-                    "Designing resilient orchestration layers using n8n and Vertex AI to automate high-stakes business processes.",
-                    "Developed the Driver App for Zipi in React Native and the frontend for newsletter.zipi.co.za, building responsive web experiences for campaign platforms."
+                    "Lead architecture and delivery of AI automation and full-stack systems supporting logistics operations, integrating shipping-line APIs (Maersk, MSC, CMA CGM, Hapag-Lloyd) with internal tools.",
+                    "Build and deploy WhatsApp chatbots and AI agents on n8n with Claude and Gemini for rate enquiries, booking, and tracking flows.",
+                    "Design REST APIs and integration services in Node.js and Python with OAuth2, webhook signature verification, and idempotency patterns."
                   ]
                 },
                 {
@@ -576,29 +580,36 @@ export default function App() {
                   company: "Land and Sea Shipping",
                   period: "Aug 2025 — Jan 2026",
                   details: [
-                    "Integrated Google Analytics for comprehensive tracking and data-driven insights into user behaviour.",
-                    "Refined PayFast payment gateway integration in Next.js, ensuring PCI-DSS compliance.",
-                    "Engineered complex Jira automation workflows using smart values and CRON triggers to reduce manual workload."
+                    "Supported and refined a PayFast payment gateway integration in a production Next.js application, ensuring signature verification and secure redirect flows aligned with PCI-DSS.",
+                    "Troubleshot IPN (Instant Payment Notification) callbacks and improved payment-flow reliability through backend signature validation.",
+                    "Integrated Google Analytics across Land and Sea Shipping and Land and Sea Risk sites end-to-end — deployment, tagging, and reporting dashboards.",
+                    "Built Jira automation rules using smart values, CRON triggers, and branching logic to auto-assign statuses and route tickets (reducing manual workload by ~30 mins/week)."
                   ]
                 },
                 {
                   role: "Junior Software Developer",
                   company: "Land and Sea Shipping",
-                  period: "June 2024 — Aug 2025",
+                  period: "Jun 2024 — Aug 2025",
                   details: [
-                    "Developed mobile and web applications with a focus on UI/UX design and functional components.",
-                    "Provided technical support for internal systems, resolving domain and performance issues.",
-                    "Managed Rocketseed email configurations and Yaxxa VoIP system support."
+                    "Developed mobile and web applications across the stack with a focus on UI/UX, translating design mockups into functional React/Next.js components.",
+                    "Provided technical support for internal systems including domain setup, email delivery, site performance, and Rocketseed configuration.",
+                    "Supported cross-functional teams during critical event launches and marketing pushes."
                   ]
                 },
                 {
-                  role: "Full Stack Developer Intern / Trainee",
+                  role: "Full Stack Developer Intern",
                   company: "Umuzi.org",
-                  period: "Nov 2021 — March 2024",
+                  period: "Apr 2023 — Mar 2024",
                   details: [
-                    "Collaborated with agile teams to develop full-stack applications and participate in code reviews.",
-                    "Engaged in real-world projects to develop problem-solving skills and teamwork.",
-                    "Received mentorship and support for job placements and industry best practices."
+                    "Collaborated with agile teams to build full-stack web applications; participated in code reviews, project planning, and continuous-learning sprints."
+                  ]
+                },
+                {
+                  role: "Full Stack Developer Trainee",
+                  company: "Umuzi.org",
+                  period: "Nov 2021 — Apr 2023",
+                  details: [
+                    "18-month intensive full-stack development programme: real-world projects, pair programming, code reviews, and agile methodology."
                   ]
                 }
               ].map((exp, idx) => (
