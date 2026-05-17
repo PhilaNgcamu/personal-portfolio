@@ -228,7 +228,7 @@ export default function App() {
               className="flex flex-col items-start"
             >
               <span className="inline-block px-3 py-1 rounded-full bg-electric-indigo/10 border border-electric-indigo/20 text-electric-indigo text-xs font-mono mb-6 uppercase tracking-widest">
-                Software Architect & AI Specialist
+                Software Architect & AI Automation Engineer
               </span>
               <h1 className="text-5xl md:text-8xl font-bold tracking-tight mb-8 leading-[1.1]">
                 Philasande Ngcamu: <span className="text-gradient">Neural Architect</span>.
@@ -280,7 +280,7 @@ export default function App() {
               <SectionHeading subtitle="The Narrative">About Me</SectionHeading>
               <div className="space-y-6 text-lg text-white/70 leading-relaxed">
                 <p>
-                  I am a Software Developer and AI Automation Specialist currently optimising complex enterprise operations at <span className="text-white font-medium">Land and Sea Shipping</span>.
+                  I am a Software Developer and AI Automation Engineer currently optimising complex enterprise operations at <span className="text-white font-medium">Land and Sea Shipping</span>.
                 </p>
                 <p>
                   While completing my BSc in Mathematics and Computer Science at <span className="text-white font-medium">UNISA</span>, I spend my days (and nights) engineering autonomous workflows that replace manual bottlenecks with intelligent agents.
